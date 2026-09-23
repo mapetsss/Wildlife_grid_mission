@@ -1,0 +1,26 @@
+d435_camera_node:
+  ros__parameters:
+    serial_no: ""
+
+    enable_color: true
+    color_width: 1280
+    color_height: 720
+    color_fps: 30
+
+    enable_depth: true
+    depth_width: 848
+    depth_height: 480
+    depth_fps: 30
+    align_depth_to_color: true
+
+    enable_emitter: true
+    # 小于 0 时保留 D435 固件默认功率。
+    laser_power: -1.0
+
+    color_frame_id: "camera_color_optical_frame"
+    depth_frame_id: "camera_aligned_depth_to_color_frame"
+    publish_camera_info: true
+    log_fps: true
+    reconnect_on_failure: true
+    reconnect_period_ms: 1000
+    frame_timeout_ms: 1000

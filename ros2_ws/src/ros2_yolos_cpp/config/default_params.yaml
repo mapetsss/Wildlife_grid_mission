@@ -1,0 +1,22 @@
+/**:
+  ros__parameters:
+    # ONNX 模型与类别文件通常由 detector.launch.py 参数覆盖。
+    model_path: ""
+    labels_path: ""
+    use_gpu: false
+    yolo_version: "auto"
+    conf_threshold: 0.4
+    nms_threshold: 0.45
+    publish_timing: true
+    use_depth: true
+
+    # RealSense D435 深度配置。
+    # 在检测框中心周围 (2r+1)^2 像素内筛选有效深度并取中位数，
+    # 可降低目标中心恰好落在深度空洞或边缘时的抖动。
+    depth_sample_radius_px: 3
+    min_depth_m: 0.15
+    max_depth_m: 10.0
+
+    # 彩色帧与对齐深度帧时间差超过该值时，不发布米制结果。
+    # 设为 0 可关闭时间差检查。
+    max_depth_age_s: 0.20

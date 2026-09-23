@@ -1,0 +1,13 @@
+wildlife_vision_node:
+  ros__parameters:
+    model_path: "/home/banana/detect_ws/src/ros2_yolos_cpp/models/drone_yolo26n_480x640.onnx"
+    classes_path: "/home/banana/detect_ws/src/ros2_yolos_cpp/models/classes.txt"
+    image_topic: "/camera/color/image_raw"
+    confidence_threshold: 0.5
+    detect_frames: 3
+
+    nms_threshold: 0.45
+    settle_time_s: 0.5
+    capture_timeout_s: 3.0
+    use_gpu: false
+    yolo_version: "auto"

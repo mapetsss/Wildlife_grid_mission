@@ -1,0 +1,12 @@
+/**:
+  ros__parameters:
+    model_path: ""
+    labels_path: ""
+    use_gpu: false
+    yolo_version: "auto"
+    conf_threshold: 0.4
+    nms_threshold: 0.45
+    publish_timing: true
+
+    # 不订阅深度和 CameraInfo；只发布 detections、offset_px 和 timing。
+    use_depth: false

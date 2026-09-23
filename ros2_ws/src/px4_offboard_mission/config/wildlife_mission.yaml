@@ -1,0 +1,37 @@
+wildlife_mission_node:
+  ros__parameters:
+    # H 题场地：9 x 7 方格，每格 0.5 m，目标高度 1.2 m。
+    target_height_m: 1.2
+    grid_cell_size_m: 0.5
+
+    # 初始飞机位置就是 A9B1 中心；机头方向指向 A8B1/A1B1。
+    # 航线必须由地面站发布到 /mission/route_upload。
+    no_fly_grids: ""
+
+    setpoint_rate_hz: 20.0
+    status_rate_hz: 2.0
+    prestream_time_s: 2.5
+    waypoint_hold_time_s: 1.0
+
+    horizontal_tolerance_m: 0.10
+    vertical_tolerance_m: 0.08
+    stable_time_s: 0.4
+
+    pose_timeout_s: 2.5
+    takeoff_timeout_s: 25.0
+    waypoint_timeout_s: 25.0
+    return_timeout_s: 25.0
+    vision_report_timeout_s: 4.0
+
+    service_retry_period_s: 1.0
+    offboard_retry_limit: 5
+    arm_retry_limit: 3
+
+    # 本任务默认全自动：切 OFFBOARD 后自动解锁；异常直接 AUTO.LAND。
+    auto_arm_enabled: true
+    auto_start: false
+    failsafe_land_on_error: true
+
+    land_mode: "AUTO.LAND"
+    hold_mode: "AUTO.LOITER"
+    setpoint_frame_id: "map"

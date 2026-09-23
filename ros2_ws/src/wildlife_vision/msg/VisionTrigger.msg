@@ -1,0 +1,2 @@
+string grid
+bool enable

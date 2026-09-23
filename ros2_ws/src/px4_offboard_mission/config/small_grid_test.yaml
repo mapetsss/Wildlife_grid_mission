@@ -1,0 +1,38 @@
+small_grid_test_node:
+  ros__parameters:
+    # A9B1 为启动时当前位置；机头方向解释为 A9B1 -> A8B1。
+    test_route: "A9B1,A8B1,A7B1,A6B1,A6B2,A7B2,A8B2,A9B2,A9B1"
+    target_height_m: 1.2
+    grid_cell_size_m: 0.5
+
+    radar_odom_topic: "/Odometry"
+    radar_odom_timeout_s: 2.5
+    radar_failsafe_enabled: true
+    radar_px4_max_error_m: 0.30
+    radar_diverged_timeout_s: 1.0
+
+    setpoint_rate_hz: 20.0
+    status_rate_hz: 2.0
+    prestream_time_s: 2.5
+    waypoint_hold_time_s: 1.0
+
+    horizontal_tolerance_m: 0.10
+    vertical_tolerance_m: 0.08
+    stable_time_s: 0.4
+
+    pose_timeout_s: 2.5
+    takeoff_timeout_s: 25.0
+    waypoint_timeout_s: 25.0
+
+    service_retry_period_s: 1.0
+    offboard_retry_limit: 5
+    arm_retry_limit: 3
+
+    # 默认只请求 OFFBOARD，等待遥控器或外部手动解锁。
+    auto_arm_enabled: false
+    auto_start: false
+    failsafe_land_on_error: true
+
+    land_mode: "AUTO.LAND"
+    hold_mode: "AUTO.LOITER"
+    setpoint_frame_id: "map"

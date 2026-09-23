@@ -1,0 +1,7 @@
+# Retained for API compatibility; the detector uses its latest cached D435
+# color frame so that it can pair the request with aligned depth.
+sensor_msgs/Image image
+---
+# [optical-axis depth z, Euclidean camera-to-target distance], metres.
+# Empty when there is no detection or no valid aligned depth.
+std_msgs/Float64MultiArray distance_m

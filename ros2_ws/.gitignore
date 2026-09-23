@@ -1,0 +1,27 @@
+# ROS 2 / colcon generated artifacts
+build/
+install/
+log/
+
+# Runtime captures and test outputs
+yolo_test_frames/
+flight_logs/
+camera_frame_*.jpg
+d435_color_*.jpg
+calibration/images/
+recordings/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# CMake and editor caches
+.cache/
+.vscode/
+.idea/
+
+# Local Codex/agent workspace metadata
+.codex
+.codex/
+.agents
+.agents/

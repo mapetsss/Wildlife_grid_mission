@@ -1,0 +1,35 @@
+model:
+  file: drone_yolo26n_480x640.onnx
+  architecture: YOLO26n
+  task: detect
+  precision: FP32
+  sha256: 470f60cae4ce5aad59eb31fbf9f8debc384ce1081c65c5b8e7a3e0e879241cb9
+
+export:
+  date: "2026-07-22"
+  ultralytics: 8.4.100
+  onnx_opset: 19
+  batch: 1
+  input_shape: [1, 3, 480, 640]
+  output_shape: [1, 300, 6]
+  dynamic: false
+  end_to_end: true
+  simplified: true
+
+classes:
+  0: monkey
+  1: kq
+  2: wolf
+  3: tiger
+  4: ele
+
+training:
+  source_checkpoint: yolo/runs/detect/runs/drone/train/weights/best.pt
+  image_size: 640
+  epochs: 100
+  best_epoch: 69
+  validation:
+    precision: 0.94442
+    recall: 0.89242
+    map50: 0.94128
+    map50_95: 0.67951
